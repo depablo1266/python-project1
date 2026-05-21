@@ -1,6 +1,8 @@
 user_name = input("Привет, как тебя зовут?")
-print(f"Привет, {' '.join(user_name.split())}! Добро пожаловать в фитнес-трекер!")
-
+print(
+    f"Привет, {' '.join(user_name.split())}! "
+    f"Добро пожаловать в фитнес-трекер!"
+)
 
 # Безопасный ввод возраста (целое число)
 while True:
@@ -10,8 +12,7 @@ while True:
     except ValueError:
         print("Пожалуйста, введи корректное число для возраста.")
 
-
-# Безопасный ввод веса 
+# Безопасный ввод веса
 while True:
     try:
         user_weight = float(input("Сколько ты весишь? (укажи в килограммах)"))
@@ -19,22 +20,28 @@ while True:
     except ValueError:
         print("Ошибка! Введите вес числом (например: 75 или 74.5).")
 
-
 # Безопасный ввод роста
 while True:
     try:
-        user_height = float(input("Какой у тебя рост? (укажи в метрах через точку, например: 1.75)"))
+        user_height = float(
+            input(
+                "Какой у тебя рост? "
+                "(укажи в метрах через точку, например: 1.75)"
+            )
+        )
         break
     except ValueError:
         print("Ошибка! Введите рост числом (например: 1.75).")
 
 print(f"Спасибо за информацию, {' '.join(user_name.split())}!")
 
+
 # расчёт индекса массы тела
 def calculate_bmi(weight, height):
-    bmi = weight / (height ** 2)
+    bmi = weight / (height**2)
     bmi = round(bmi, 1)
     return bmi
+
 
 # расчёт необходимого потребления воды
 def calc_water_ml(weight):
@@ -45,14 +52,16 @@ def calc_water_ml(weight):
     return water_l
 
 
-bmi = calculate_bmi(user_weight, user_height) 
- 
-
+bmi = calculate_bmi(user_weight, user_height)
 water_intake = calc_water_ml(user_weight)
 
-# вывод отчета для пользователя 
+# вывод отчета для пользователя
 print(f"Отчет для пользователя {' '.join(user_name.split())}:")
 print(f"Твой индекс массы тела (ИМТ) составляет: {bmi}")
 print(f"Тебе нужно выпивать примерно {water_intake} литров воды в день.")
-print(f"Спасибо, что воспользовались нашим фитнес-трекером, {' '.join(user_name.split())}! Удачи в достижении поставленных целей!")
+print(
+    f"Спасибо, что воспользовались нашим фитнес-трекером, "
+    f"{' '.join(user_name.split())}! "
+    f"Удачи в достижении поставленных целей!"
+)
 
